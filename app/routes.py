@@ -26,9 +26,9 @@ def signup():
         print('Hooray our form was validated!!')
         first_name = form.first_name.data
         last_name = form.last_name.data
-        email = form.email.data
         username = form.username.data
         password = form.password.data
+        email = form.email.data
         print(first_name, last_name, email, username, password)
         # Check to see if there is already a user with either username or email
         check_user = db.session.execute(db.select(User).filter((User.username == username) | (User.email == email))).scalars().all()
